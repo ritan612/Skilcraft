@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bookclasses-Skillcraft</title>
+<link rel="icon" type="image/x-icon" href="picture\1.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+    body {
+  background-image: url('photo-1496950866446-3253e1470e8e.jpeg');
+  min-height: 50%;
+  background-position: center;
+  background-size: cover;
+}
+ .class-container {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            font-size: 2vw;
+        }
+.class-card {
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 20px;
+            width: 45%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.233);
+        }
+button {
+            background-color: rgb(109, 62, 32);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color:rgb(67, 44, 30);
+        }
+        h4 a{
+    color: rgb(0, 0, 0);
+}
+.bookClass{
+text-align: center;
+font-size: 2vw;
+}
+h4 :hover{
+    color: rgb(141, 93, 55);
+}
+
+.dropdown {
+  color: rgb(0, 0, 0);
+}
+
+.dropdown-content {
+  background-color: rgba(160, 160, 160, 0.512);
+}
+.dropdown-content :hover{
+    color: rgb(141, 93, 55);
+}
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+}
+div.sticky {
+  top: 0;
+  padding: 5px;
+  background-color: #cccccc5a;
+}
+p{
+    font-weight: bold;
+}
+h2 {
+    font-weight: bolder;
+}
+h1{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 3vw;
+}
+</style>
+</head>
+<body>
+    <div class="sticky">
+        <table style="width:100% ; height:1cm; position: top;">
+            <tr>
+                <td style="width:30%"><h4 style="text-align:left;"><a href="projet.html">
+                    <img src="picture\1.png" alt="Home" width="150" height="50">
+                </a></h4></td>
+                <td><h4><div class="dropdown">
+                    Classes
+                    <div class="dropdown-content">
+                      <a href="dance.html">Dance</a>
+                      <a href="music.html">Music</a>
+                      <a href="art.html">Art</a>
+                      <a href="photograph.html">Photograph</a>
+                    </div>
+                  </div></h4></td>
+                <td><h4><a href="about.html">About us</a></h4></td>
+                <td><h4><a href="login.html">Log-In</a></h4></td>
+                <td><h4><a href="bookclasses.html">Book class</a></h4></td>
+            </tr>    
+        </table>
+    </div>
+    
+<div id="app">
+    <h1>Class Booking System</h1>
+
+    <div class="class-container" id="classContainer"></div>
+<div class="bookClass">
+    <h2>Your Booked Classes</h2>
+    <ul id="bookedClasses"></ul>
+
+    <p>Total Booked Slots: <span id="totalSlots">0</span></p>
+    <p>Total Cost: $<span id="totalCost">0.00</span></p>
+
+    <button onclick="pay()" >Pay Now</button
+        ></div>
+    
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var availableClasses = [
+            { name: "HIP-HOP, Dance", slots: 10, price: 20.00 },
+            { name: "MODERN, Dance", slots: 10, price: 20.00 },
+            { name: "CLASSIC, Dance", slots: 10, price: 20.00 },
+            { name: "BALLET, Dance", slots: 10, price: 20.00 },
+            { name: "SALSA, Dance", slots: 10, price: 20.00 },
+            { name: "TANGO, Dance", slots: 10, price: 20.00 },
+            { name: "SINGING, Music", slots: 15, price: 15.00 },
+            { name: "PIANO, Music", slots: 15, price: 15.00 },
+            { name: "GUITAR, Music", slots: 15, price: 15.00 },
+            { name: "FLUTE, Music", slots: 15, price: 15.00 },
+            { name: "VIOLON, Music", slots: 15, price: 15.00 },
+            { name: "PAINTING, Art", slots: 5, price: 30.00 },
+            { name: "DRAWING, Art", slots: 5, price: 30.00 },
+            { name: "SCULPTURE, Art", slots: 5, price: 30.00 },
+            { name: "PHOTOGRAPH", slots: 8, price: 25.00 },
+            { name: "FILMER", slots: 8, price: 25.00 }
+        ];
+
+        var classContainer = document.getElementById("classContainer");
+
+        var bookedClassesList = document.getElementById("bookedClasses");
+
+        var totalSlotsElement = document.getElementById("totalSlots");
+        var totalCostElement = document.getElementById("totalCost");
+
+        totalBookedSlots = 0;
+        totalCost = 0.00;
+
+        availableClasses.forEach((cls) => {
+            var classCard = document.createElement("div");
+            classCard.className = "class-card";
+            classCard.innerHTML = `
+                <h3>${cls.name}</h3>
+                <p>Slots available: ${cls.slots}</p>
+                <p>Price: $${cls.price.toFixed(2)}</p>
+                <button onclick="bookClass('${cls.name}', ${cls.slots}, ${cls.price})">Book</button>
+            `;
+            classContainer.appendChild(classCard);
+        });
+
+        window.bookClass = function (className, slots, price) {
+            var confirmation = confirm(`Do you want to book ${slots} slots for ${className} for $${price.toFixed(2)}?`);
+            if (confirmation) {
+                var bookedItem = document.createElement("li");
+                bookedItem.textContent = `${className}: ${slots} slots booked - $${(slots * price).toFixed(2)}`;
+                bookedClassesList.appendChild(bookedItem);
+
+                totalBookedSlots += slots;
+                totalCost += slots * price;
+
+                totalSlotsElement.textContent = totalBookedSlots;
+                totalCostElement.textContent = totalCost.toFixed(2);
+            }
+        };
+
+        window.pay = function () {
+            if (totalCost > 0) {
+                alert(`Payment successful! Total amount paid: $${totalCost.toFixed(2)}`);
+               bookedClassesList.innerHTML = "";
+                totalBookedSlots = 0;
+                totalCost = 0.00;
+                totalSlotsElement.textContent = totalBookedSlots;
+                totalCostElement.textContent = totalCost.toFixed(2);
+            } else {
+                alert("No classes booked. Please book some classes before making a payment.");
+            }
+        };
+    });
+</script>
+</body>
+</html>

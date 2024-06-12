@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login-Skillcraft</title>
+<link rel="icon" type="image/x-icon" href="picture\1.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+body {
+  background-image: url('photo-1496950866446-3253e1470e8e.jpeg');
+  min-height: 50%;
+  background-position: center;
+  background-size: cover;
+}
+h2{
+    font-size: xx-large;
+    text-align: center;
+    background-color: #845431be;
+    color: white;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #dad6d6;
+}
+
+button {
+  background-color: #845331;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #4b2305;
+}
+
+.signin a{
+    text-decoration: none;
+    color: #4b311f;
+}
+
+.signin{
+margin-top: -50px;
+}
+
+.signin a:hover{
+    color: #1e1209;
+}
+
+.container {
+  padding: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="sticky">
+    <table style="width:100% ; height:1cm; position: top;">
+        <tr>
+            <td style="width:30%"><h4 style="text-align:left;"><a href="projet.html">
+                <img src="picture\1.png" alt="Home" width="150" height="50">
+            </a></h4></td>
+            <td><h4><div class="dropdown">
+                Classes
+                <div class="dropdown-content">
+                  <a href="dance.html">Dance</a>
+                  <a href="music.html">Music</a>
+                  <a href="art.html">Art</a>
+                  <a href="photograph.html">Photograph</a>
+                </div>
+              </div></h4></td>
+            <td><h4><a href="about.html">About us</a></h4></td>
+            <td><h4><a href="login.html">Log-In</a></h4></td>
+            <td><h4><a href="bookclasses.html">Book class</a></h4></td>
+        </tr>    
+    </table>
+</div>
+
+
+<h2>Log in Form</h2>
+
+  <div class="container">
+    <form id="signInForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username"placeholder="Enter  The Username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter The Password" name="password" required>
+
+      <button type="button" onclick="attemptSignIn()">Log In</button>
+  </form>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <div class="signin"><h3 style="float: right;">Don't have an account<br><a href="signin.html">create one</a></h3></div>
+  </div>
+</form>
+
+</body>
+</html>

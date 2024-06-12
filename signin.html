@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account-Skillcraft</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+           margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        body, html{height: 100%;}
+body {
+  background-image: url('photo-1496950866446-3253e1470e8e.jpeg');
+  min-height: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            height: fit-content;
+            margin-top: 300px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #5a4122;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #947146;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="signupForm">
+        <h2 style="background-color: #5a4122; color: white;">Create Account</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <label for="paymentMethod">Payment Method:</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+            <option value="">Select</option>
+            <option value="creditCard">Credit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="bankTransfer">Bank Transfer</option>
+        </select>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <button type="button" onclick="createAccount()">Create Account</button>
+    </form>
+
+    <script>
+        function createAccount() {
+            var fullName = document.getElementById("fullName").value;
+            var email = document.getElementById("email").value;
+            var gender = document.getElementById("gender").value;
+            var country = document.getElementById("country").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var paymentMethod = document.getElementById("paymentMethod").value;
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("errorMessage").innerText = "Invalid email format. Please enter a valid email address.";
+                return;
+            }
+
+            if (password.length < 8) {
+                document.getElementById("errorMessage").innerText = "Password must have at least 8 characters.";
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                document.getElementById("errorMessage").innerText = "Passwords do not match. Please try again.";
+                return;
+            }
+
+            alert(`Account created successfully!\nFull Name: ${fullName}\nEmail: ${email}\nGender: ${gender}\nCountry: ${country}\nUsername: ${username}\nPayment Method: ${paymentMethod}`);
+        }
+    </script>
+
+</body>
+</html>

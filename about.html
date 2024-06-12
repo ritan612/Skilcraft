@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About us-Skillcraft</title>
+<link rel="icon" type="image/x-icon" href="picture\1.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style2.css">
+<style>
+  header {
+              text-align: center;
+              margin-top: 100px;
+              margin-bottom: 30px;
+              color: #ffffff;
+              background-image:url('hobbies.jpg');
+          }
+</style>
+</head>
+<body>
+<div class="sticky">
+  <ul>
+    <li style="width:30%; float: left;" ><h4 style="text-align:left;"><a href="projet.html">
+        <img src="picture\1.png" alt="Home" width="150" height="50">
+    </a></h4></li>
+    <li style="width: 17%; float: left;"><h4><div class="dropdown">
+        Classes
+        <div class="dropdown-content">
+          <a href="dance.html">Dance</a>
+          <a href="music.html">Music</a>
+          <a href="art.html">Art</a>
+          <a href="photograph.html">Photograph</a>
+        </div>
+      </div></h4></li>
+    <li style="width: 17%; float: left;"><h4><a href="about.html">About us</a></h4></li>
+    <li style="width: 17%; float: left;"><h4><a href="login.html">Log-In</a></h4></li>
+    <li style="width: 17%; float: left;"><h4><a href="bookclasses.html">Book class</a></h4></li>    
+</ul>
+</div>
+
+<header>
+    <h1 style="font-size: 2.5em; color: white;">SkillCraft</h1>
+    <p style="font-size: 1.2em;">Unlock Your Potential Through the Joy of Hobbies</p>
+</header>
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 4</div>
+    <img src="picture\Dance-Studio-for-Adults.jpg" style="width:100%">
+    <div class="text1">Dance Class</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 4</div>
+    <img src="picture\Wenger_1712_SA_IMAGE.jpg" style="width:100%">
+    <div class="text1">Music Class</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="picture\draw-class900.jpg" style="width:100%">
+    <div class="text1">Art class</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="picture\Still-life-direction.jpg" style="width:100%">
+    <div class="text1">photograph class</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(4)"></span> 
+  </div>
+  
+  <script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+
+
+<img class="img_deg" src="picture\conservatoire-interieur-classe-1200x630.jpg" alt="conservatoire">
+<div class="paragraphe1">
+    <h4>Get to know us</h4>
+    <h1>Grow your skills learn with us from anywhere</h1>
+        <p>Embark on a journey of self-discovery with Your Hobby Learning, where we are passionate about providing a platform for individuals to explore and master new hobbies.<br>
+         Our mission is to inspire and empower you through the joy of learning.<br>
+         Our mission is to inspire and empower individuals to explore their interests, unlock their creativity, and cultivate a lifelong love for learning.<br>
+        We strive to create a welcoming community where everyone, regardless of age or background, can embark on a journey of self-discovery through the joy of hobbies.</p>
+        <img class="img" src="picture\1 (2).png" >
+        <img class="img" src="picture\2.png">
+        </h2>
+</div>
+<div class="paragraphe2">
+    <h4>Popular Courses</h4>
+    <h1>Pick a course to get started your study</h1>
+</div>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="picture\3.jpg" alt="Music" style="width:100%">
+      <div class="container">
+        <h2>Singing</h2>
+        <p class="title">+50 lessons</p>
+        <p>Discover the melody within you and unlock the magic of your voice</p>
+        <p>beginner & advanced</p>
+        <p><button class="button"><a href="signin.html">More info</a></button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="picture\4.jpg" alt="Dance" style="width:100%">
+      <div class="container">
+        <h2>Dancing</h2>
+        <p class="title">+30 lessons</p>
+        <p>Step into the rhythm of joy and let the dance unfold</p>
+        <p>beginner & advanced</p>
+        <p><button class="button"><a href="dance.html">More info</a></button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <div class="img1"><img src="picture\5.jpg" alt="Draws" style="width:100%"></div>
+      <div class="container">
+        <h2>Drawing</h2>
+        <p class="title">+10 lessons</p>
+        <p> pick up your tools, let the lines flow, and unveil the beauty that lies within the strokes of your creation</p>
+        <p>beginner & advanced</p>
+        <p><button class="button"><a href="drawing.html">More info</a></button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="picture\6.jpg" alt="Photograph" style="width:100%">
+      <div class="container">
+        <h2>Photograph</h2>
+        <p class="title">+20 lessons</p>
+        <p> pick up your camera, frame your vision, and let the world see through your lens</p>
+        <p>beginner & advanced</p>
+        <p><button class="button"><a href="photograph.html">More info</a></button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="paragraphe3">
+  <h4>Popular courses</h4>
+  <h1>Meet the teacher who will teaches you</h1>
+</div>
+<div class="row">
+<div class="container1">
+  <img src="picture\dance.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">
+      <b><h1 style="color: black;">Emily Turner</h1></b>
+      <h3>a passionate and experienced dance instructor known for her dynamic teaching style.<br>
+       With a background in various dance forms such as contemporary, ballet, and salsa</h3>
+      </div>
+  </div>
+</div>
+
+<div class="container1">
+  <img src="picture\draw.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">
+      <h1 style="color: black;"><b>Alexander Mitchell</b></h1>
+      <h3>dedicated and inspiring drawing instructor who brings passion and precision to the world of art.<br> With a background in fine arts and illustration,</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container1">
+  <img src="picture\photograph.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">
+      <h1 style="color: black;"><b>Rachel Bennett</b></h1>
+      <h3>a talented and visionary photographer capturing moments with a keen eye for detail.<br> With a background in fine arts and a passion for storytelling through visuals</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container1">
+  <img src="picture\singer.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">
+      <h1 style="color: black;"><b>Michael Anderson</b></h1>
+      <h3>charismatic and soulful male singer known for his captivating voice and dynamic stage presence.<br> With a background in various genres, including pop and R&B</h3>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

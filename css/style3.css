@@ -1,0 +1,217 @@
+body,h1 {font-family: "fantasy", sans-serif}
+body, html {height: 100%}
+
+h4 a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: x-large;
+    font-style: italic;
+    font-weight:bolder;
+}
+h4 :hover{
+    color: rgb(141, 93, 55);
+}
+p{
+    color: black;
+}
+
+.dropdown {
+  color: rgb(0, 0, 0);
+  position: relative;
+  display: inline-block;
+  font-size: x-large;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(185, 183, 183, 0.499);
+}
+.dropdown-content :hover{
+    color: rgb(141, 93, 55);
+}
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 0px;
+    background-color: #cccccc5a;
+  }
+  ul{
+    list-style: none;
+  }
+
+
+  .img_deg{
+    float: left;
+    width: 50%;
+    height: 400px;
+    margin-bottom: 70px;
+}
+.paragraphe1 {
+  text-align: left;
+  width: 45%;
+  line-height: 1;
+  height: 400px;
+  float: right;
+  font-size: x-large;
+}
+.img1{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.container {
+    position: relative;
+    text-align: left;
+}
+.container1 {
+    position: relative;
+    text-align: right;
+    margin-top: 0px;
+
+}
+.text-overlay1 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(0, -50%);
+    color: white;
+    padding:50px;
+    font-size:x-large;
+}
+.text-overlay {
+    position: absolute;
+    text-align: left;
+    top: 70%;
+    right: 50%;
+    transform: translate(0, -50%);
+    color: white;
+    padding: 20px;
+    font-size:x-large;
+    font-size: 2vw;
+    line-height: 1;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px;
+    
+}
+
+.gallery-item {
+    width: 25%;
+    margin: 0px;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.image-caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+.dancehallgallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px;
+}
+
+.dancehall{
+    width: 45%;
+    margin: 0px;
+    text-align: center;
+}
+
+.dancehall img {
+    width: 100%;
+    height: auto;
+    height: 75%;
+}
+.button a{
+  border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    background-color: #87725f;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    font-size: x-large;
+}
+.button a:hover {
+    background-color: #56493d;
+  
+  }
+  .circle-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 10px;
+        }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-box {
+            display: flex;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .text {
+            flex: 1;
+            padding: 50px;
+        }
+
+        .text h2 {
+            margin-bottom: 10px;
+        }
+
+        .image {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
